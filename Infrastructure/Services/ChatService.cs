@@ -8,28 +8,29 @@ namespace Task_corectev.Infrastructure.Services
 {
     public class ChatService : IChatService
     {
-        // The main heavy model (mistral) used for generating responses
         private readonly IChatCompletionService _mainChatModel;
         private readonly IMemoryCache _memoryCache;
         private readonly ChatHistorySummarizationReducer _historyReducer;
-
-        // The RAG service used to search Qdrant for CV context
         private readonly IRagService _ragService;
+
+        // 1. Inject the collection of all specialized agents available in the system
+        private readonly IEnumerable<ISpecializedAgent> _agents;
 
         public ChatService(
             [FromKeyedServices("ChatModel")] IChatCompletionService mainChatModel,
             [FromKeyedServices("SummaryModel")] IChatCompletionService summaryModel,
             IMemoryCache memoryCache,
-            IRagService ragService)
+            IRagService ragService,
+            IEnumerable<ISpecializedAgent> agents) // Receive the agents here
         {
             _mainChatModel = mainChatModel;
             _memoryCache = memoryCache;
             _ragService = ragService;
+            _agents = agents;
 
-            // Initialize the reducer with the lightweight model (llama2) to manage token limits safely
             _historyReducer = new ChatHistorySummarizationReducer(summaryModel, targetCount: 10)
             {
-                SummarizationInstructions = "Summarize the following conversation briefly. CRITICAL: Retain all important career details, skills, and context.",
+                SummarizationInstructions = "Summarize the conversation briefly. Retain key career details.",
                 FailOnError = false
             };
         }
@@ -40,58 +41,72 @@ namespace Task_corectev.Infrastructure.Services
             if (!_memoryCache.TryGetValue(request.SessionId, out ChatHistory? chatHistory) || chatHistory == null)
             {
                 chatHistory = new ChatHistory();
-
-                // Strict System Prompt to enforce the HR Assistant persona and prevent hallucination
-                string systemPrompt = @"You are an expert AI HR Assistant. 
-                                        You analyze CVs and answer career-related questions. 
-                                        If the user asks outside this scope, decline politely. 
-                                        Always base your answers strictly on the provided CV context.";
-                chatHistory.AddSystemMessage(systemPrompt);
             }
 
-            // 2. Orchestration: Search the Qdrant Vector DB based on the user's query
+            chatHistory.AddUserMessage(request.UserMessage);
+
+            // 2. Intelligent Routing (Intent Classification)
+            string targetAgentName = await DetermineTargetAgentAsync(request.UserMessage);
+
+            // Find the requested agent from the injected list, fallback to AtsAgent if not found
+            var selectedAgent = _agents.FirstOrDefault(a => a.Name == targetAgentName)
+                                ?? _agents.First(a => a.Name == "AtsAgent");
+
+            // 3. Orchestration: Search the Qdrant Vector DB
+            // (In the future, we will pass request.CvId here to filter by user)
             string cvContext = await _ragService.SearchCvAsync(request.UserMessage);
 
-            // 3. Context Augmentation: Combine the user's message with the retrieved CV data
-            string enrichedUserMessage = request.UserMessage;
+            // 4. Context Augmentation: Pass context and recent history to the specialized agent
+            // We pass the recent history so the agent understands the conversation flow
+            string recentHistory = string.Join("\n", chatHistory.TakeLast(3).Select(m => $"{m.Role}: {m.Content}"));
+            string contextForAgent = $"[Recent Conversation]:\n{recentHistory}\n\n[CV Context]:\n{cvContext}";
 
-            if (!string.IsNullOrWhiteSpace(cvContext))
-            {
-                enrichedUserMessage = $@"
-User Question: {request.UserMessage}
+            string aiResponseText = await selectedAgent.GenerateResponseAsync(request.UserMessage, contextForAgent);
 
-[Context extracted from the CV]:
-{cvContext}
+            // 5. Save the generated response to the chat history
+            chatHistory.AddAssistantMessage(aiResponseText);
 
-(Instructions: Answer the user's question based strictly on the CV Context above. If the answer is not in the context, clearly state that the CV does not contain this information.)";
-            }
-
-            // 4. Add the enriched message to the chat history
-            chatHistory.AddUserMessage(enrichedUserMessage);
-
-            // 5. Reduce the history if it exceeds the target count to save context window tokens
+            // 6. Reduce the history size if it exceeds the limit and save to cache
             var reducedMessages = await _historyReducer.ReduceAsync(chatHistory);
             if (reducedMessages != null)
             {
                 chatHistory = new ChatHistory(reducedMessages);
             }
 
-            // 6. Call the main LLM (mistral) to generate the final response
-            var response = await _mainChatModel.GetChatMessageContentAsync(chatHistory);
-            string aiResponseText = response.Content ?? "I am sorry, I could not generate a response.";
-
-            // 7. Add the AI's response to the history to maintain the conversational context
-            chatHistory.AddAssistantMessage(aiResponseText);
-
-            // 8. Save the updated history back to the memory cache with a 2-hour expiration
             var cacheOptions = new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(2));
             _memoryCache.Set(request.SessionId, chatHistory, cacheOptions);
 
-            // 9. Return the formatted DTO object
+            // Return the response, optionally including the agent name for UI debugging
             return new ChatResponseDto
             {
-                AiResponse = aiResponseText
+                AiResponse = aiResponseText,
+                // HandledBy = selectedAgent.Name // Optional: expose which agent handled the request
             };
+        }
+
+        /// <summary>
+        /// Uses AI to dynamically determine the most suitable agent based on the user's message.
+        /// </summary>
+        private async Task<string> DetermineTargetAgentAsync(string userMessage)
+        {
+            // Build a list of names and descriptions for all available agents dynamically
+            var availableAgentsInfo = string.Join("\n", _agents.Select(a => $"- {a.Name}: {a.Description}"));
+
+            string routingPrompt = $@"You are an intelligent routing orchestrator.
+Your job is to read the user's message and decide which specialized agent should handle it.
+
+Available Agents:
+{availableAgentsInfo}
+
+User Message: ""{userMessage}""
+
+CRITICAL INSTRUCTION: Reply ONLY with the exact Name of the chosen agent from the list above. Do not add any punctuation, explanation, or extra words. If unsure, reply with AtsAgent.";
+
+            var routingHistory = new ChatHistory();
+            routingHistory.AddSystemMessage(routingPrompt);
+
+            var response = await _mainChatModel.GetChatMessageContentAsync(routingHistory);
+            return response.Content?.Trim() ?? "AtsAgent";
         }
     }
 }

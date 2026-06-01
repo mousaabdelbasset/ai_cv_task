@@ -51,6 +51,9 @@ namespace Task_corectev
             builder.Services.AddScoped<IRagService, RagService>();
 
             builder.Services.AddScoped<IChatService, ChatService>();
+            // Register the Specialized Agents
+            builder.Services.AddScoped<ISpecializedAgent, Task_corectev.Infrastructure.Agents.AtsAgent>();
+            builder.Services.AddScoped<ISpecializedAgent, Task_corectev.Infrastructure.Agents.InterviewAgent>();
             #endregion
 
             var app = builder.Build();

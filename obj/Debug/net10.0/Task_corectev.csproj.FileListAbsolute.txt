@@ -56,3 +56,4 @@ C:\Users\micro\Desktop\current_iti_tasks\Ai\Task_corectev\Task_corectev\bin\Debu
 C:\Users\micro\Desktop\current_iti_tasks\Ai\Task_corectev\Task_corectev\bin\Debug\net10.0\UglyToad.PdfPig.dll
 C:\Users\micro\Desktop\current_iti_tasks\Ai\Task_corectev\Task_corectev\bin\Debug\net10.0\Qdrant.Client.dll
 C:\Users\micro\Desktop\current_iti_tasks\Ai\Task_corectev\Task_corectev\bin\Debug\net10.0\System.Numerics.Tensors.dll
+C:\Users\micro\Desktop\current_iti_tasks\Ai\Task_corectev\Task_corectev\obj\Debug\net10.0\Task_corectev.sourcelink.json
