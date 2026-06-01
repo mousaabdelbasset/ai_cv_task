@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "lqqfmtlHel8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\Task_corectev.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\micro\\.nuget\\packages\\google.protobuf\\3.31.0\\google.protobuf.3.31.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\grpc.core.api\\2.71.0\\grpc.core.api.2.71.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\grpc.net.client\\2.71.0\\grpc.net.client.2.71.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\grpc.net.common\\2.71.0\\grpc.net.common.2.71.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.6\\microsoft.aspnetcore.openapi.10.0.6.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.extensions.ai\\10.5.0\\microsoft.extensions.ai.10.5.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.5.0\\microsoft.extensions.ai.abstractions.10.5.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.extensions.vectordata.abstractions\\10.1.0\\microsoft.extensions.vectordata.abstractions.10.1.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.net.compilers.toolset\\4.14.0\\microsoft.net.compilers.toolset.4.14.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.openapi\\2.4.1\\microsoft.openapi.2.4.1.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.semantickernel.abstractions\\1.77.0\\microsoft.semantickernel.abstractions.1.77.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.semantickernel.connectors.ollama\\1.77.0-alpha\\microsoft.semantickernel.connectors.ollama.1.77.0-alpha.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\microsoft.semantickernel.core\\1.77.0\\microsoft.semantickernel.core.1.77.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\ollamasharp\\5.4.12\\ollamasharp.5.4.12.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\pdfpig\\0.1.15-alpha-20260530-bb406\\pdfpig.0.1.15-alpha-20260530-bb406.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\qdrant.client\\1.18.1\\qdrant.client.1.18.1.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\swashbuckle.aspnetcore\\10.2.0\\swashbuckle.aspnetcore.10.2.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.2.0\\swashbuckle.aspnetcore.swagger.10.2.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.2.0\\swashbuckle.aspnetcore.swaggergen.10.2.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.2.0\\swashbuckle.aspnetcore.swaggerui.10.2.0.nupkg.sha512",
+    "C:\\Users\\micro\\.nuget\\packages\\system.numerics.tensors\\10.0.6\\system.numerics.tensors.10.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
