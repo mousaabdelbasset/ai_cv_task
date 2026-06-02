@@ -81,6 +81,10 @@
           "userMessage": {
             "type": "string",
             "nullable": true
+          },
+          "cvId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

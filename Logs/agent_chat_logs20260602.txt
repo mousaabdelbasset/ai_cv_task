@@ -1,0 +1,89 @@
+2026-06-02 23:48:03.463 +03:00 [INF] Starting up the application...
+2026-06-02 23:48:04.434 +03:00 [INF] Now listening on: http://localhost:5254
+2026-06-02 23:48:04.494 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-02 23:48:04.495 +03:00 [INF] Hosting environment: Development
+2026-06-02 23:48:04.497 +03:00 [INF] Content root path: C:\Users\micro\Desktop\current_iti_tasks\Ai\HR_AI\ai_cv_task
+2026-06-02 23:48:06.096 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/index.html - null null
+2026-06-02 23:48:06.516 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/index.html - 304 null null 436.4499ms
+2026-06-02 23:48:06.560 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/index.js - null null
+2026-06-02 23:48:06.560 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger-ui-standalone-preset.js - null null
+2026-06-02 23:48:06.565 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger-ui.css - null null
+2026-06-02 23:48:06.524 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/index.css - null null
+2026-06-02 23:48:06.560 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger-ui-bundle.js - null null
+2026-06-02 23:48:06.605 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/index.js - 304 null null 14.8328ms
+2026-06-02 23:48:06.561 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-02 23:48:06.630 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/_vs/browserLink - null null
+2026-06-02 23:48:06.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger-ui-standalone-preset.js - 304 null null 72.7182ms
+2026-06-02 23:48:06.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger-ui.css - 304 null null 68.1185ms
+2026-06-02 23:48:06.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/index.css - 304 null null 111.3001ms
+2026-06-02 23:48:06.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger-ui-bundle.js - 304 null null 73.684ms
+2026-06-02 23:48:06.644 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/_framework/aspnetcore-browser-refresh.js - 200 14931 application/javascript; charset=utf-8 83.6575ms
+2026-06-02 23:48:06.714 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.3737ms
+2026-06-02 23:48:06.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - null null
+2026-06-02 23:48:06.773 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5254/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.4881ms
+2026-06-02 23:48:21.010 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/api/Cv/upload - multipart/form-data; boundary=----WebKitFormBoundarygMPkqppO97XzJGtz 229157
+2026-06-02 23:48:21.031 +03:00 [INF] Executing endpoint 'Task_corectev.Api.Controllers.CvController.UploadCv (Task_corectev)'
+2026-06-02 23:48:21.084 +03:00 [INF] Route matched with {action = "UploadCv", controller = "Cv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCv(Microsoft.AspNetCore.Http.IFormFile) on controller Task_corectev.Api.Controllers.CvController (Task_corectev).
+2026-06-02 23:48:21.203 +03:00 [INF] Starting CV processing and storing. CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:48:22.691 +03:00 [INF] Collection 'ResumeContainer' does not exist. Creating new collection...
+2026-06-02 23:48:27.236 +03:00 [INF] Successfully stored 6 chunks in Qdrant for CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:48:27.252 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-02 23:48:27.274 +03:00 [INF] Executed action Task_corectev.Api.Controllers.CvController.UploadCv (Task_corectev) in 6177.5469ms
+2026-06-02 23:48:27.279 +03:00 [INF] Executed endpoint 'Task_corectev.Api.Controllers.CvController.UploadCv (Task_corectev)'
+2026-06-02 23:48:27.288 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/api/Cv/upload - 200 null application/json; charset=utf-8 6278.5587ms
+2026-06-02 23:49:27.218 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/api/Chat/ask - application/json 134
+2026-06-02 23:49:27.224 +03:00 [INF] Executing endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:49:27.243 +03:00 [INF] Route matched with {action = "Ask", controller = "Chat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(Task_corectev.Dtos.ChatRequestDto) on controller Task_corectev.Api.Controllers.ChatController (Task_corectev).
+2026-06-02 23:49:27.296 +03:00 [INF] Receiving Chat Request for Session: 1, CV: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:49:27.302 +03:00 [INF] Processing chat request. SessionId: 1, CvId: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:49:27.304 +03:00 [INF] User Message: 'tell me what is the education of candiete'
+2026-06-02 23:49:38.013 +03:00 [INF] Message routed to Agent: Q: What is the value of -2 + 1 - (-4 - -3)?
+A: 0
+2026-06-02 23:49:38.021 +03:00 [INF] Searching in Qdrant. CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec, Query: 'tell me what is the education of candiete'
+2026-06-02 23:49:38.232 +03:00 [INF] Found 5 matching chunks for CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:49:41.554 +03:00 [INF] AI generated a response successfully for SessionId: 1
+2026-06-02 23:49:41.592 +03:00 [INF] Executing OkObjectResult, writing value of type 'Task_corectev.Dtos.ChatResponseDto'.
+2026-06-02 23:49:41.596 +03:00 [INF] Executed action Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev) in 14349.3499ms
+2026-06-02 23:49:41.599 +03:00 [INF] Executed endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:49:41.602 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/api/Chat/ask - 200 null application/json; charset=utf-8 14384.056ms
+2026-06-02 23:50:36.447 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/api/Chat/ask - application/json 119
+2026-06-02 23:50:36.453 +03:00 [INF] Executing endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:50:36.455 +03:00 [INF] Route matched with {action = "Ask", controller = "Chat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(Task_corectev.Dtos.ChatRequestDto) on controller Task_corectev.Api.Controllers.ChatController (Task_corectev).
+2026-06-02 23:50:36.460 +03:00 [INF] Receiving Chat Request for Session: 1, CV: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:50:36.462 +03:00 [INF] Processing chat request. SessionId: 1, CvId: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:50:36.465 +03:00 [INF] User Message: 'lets make a mock interview'
+2026-06-02 23:50:37.978 +03:00 [INF] Message routed to Agent: Q: Let n = 2304/19 + -121. Which is the closest to -0.3?  (a) n  (b) 0.4  (c) 0
+A: c
+2026-06-02 23:50:37.981 +03:00 [INF] Searching in Qdrant. CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec, Query: 'lets make a mock interview'
+2026-06-02 23:50:38.072 +03:00 [INF] Found 5 matching chunks for CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:50:56.002 +03:00 [INF] AI generated a response successfully for SessionId: 1
+2026-06-02 23:50:56.005 +03:00 [INF] Executing OkObjectResult, writing value of type 'Task_corectev.Dtos.ChatResponseDto'.
+2026-06-02 23:50:56.013 +03:00 [INF] Executed action Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev) in 19554.3466ms
+2026-06-02 23:50:56.015 +03:00 [INF] Executed endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:50:56.018 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/api/Chat/ask - 200 null application/json; charset=utf-8 19571.0836ms
+2026-06-02 23:51:37.927 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5254/api/Chat/ask - application/json 113
+2026-06-02 23:51:37.932 +03:00 [INF] Executing endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:51:37.934 +03:00 [INF] Route matched with {action = "Ask", controller = "Chat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(Task_corectev.Dtos.ChatRequestDto) on controller Task_corectev.Api.Controllers.ChatController (Task_corectev).
+2026-06-02 23:51:37.948 +03:00 [INF] Receiving Chat Request for Session: 1, CV: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:51:37.951 +03:00 [INF] Processing chat request. SessionId: 1, CvId: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:51:37.953 +03:00 [INF] User Message: 'how i can make pasta'
+2026-06-02 23:51:47.710 +03:00 [INF] Message routed to Agent: # How to install Windows 10 on a MacBook Pro with Core i5, 8GB RAM and Nvidia GeForce GT 330M?
+
+I have a Macbook Pro 2009 model (MacbookPro5,1) with Intel Core i5 Processor 2.66 GHz, 8 GB of Ram and Nvidia GeForce GT 330M graphics card. I want to install Windows 10 on it as a dual boot. Can I?
+
+I have tried several guides but all of them do not work with my model (for example: https://www.macworld.co.uk/how-to/mac-software/bootcamp-install-windows-10-3674952/)
+
+## Answer (1)
+
+You can use Boot Camp Assistant on macOS to create a windows installer USB drive and then boot from it and install Windows.
+
+But, Windows 10 doesn't work with the Nvidia graphics card natively, so you will need a driver to enable 3D acceleration. You can try the latest available driver from here: https://www.nvidia.com/Download/Find.aspx?lang=en-us
+
+Comment: This is incorrect in several ways. 1) the NVIDIA GeForce GT 330M works with Windows, but it is unsupported, meaning no official driver exists. I have used these cards to run Windows 7 successfully and I can imagine they will work fine for Windows 10 as well. 2) The drivers listed in that link are the wrong version for this MacBook Pro model - you would be looking for drivers for the Intel HD graphics, not the nVidia GT 330M.
+2026-06-02 23:51:47.712 +03:00 [INF] Searching in Qdrant. CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec, Query: 'how i can make pasta'
+2026-06-02 23:51:49.814 +03:00 [INF] Found 5 matching chunks for CV ID: 045ac6e9-9666-40ce-85f6-93ffbbd62eec
+2026-06-02 23:51:58.367 +03:00 [INF] AI generated a response successfully for SessionId: 1
+2026-06-02 23:51:58.369 +03:00 [INF] Executing OkObjectResult, writing value of type 'Task_corectev.Dtos.ChatResponseDto'.
+2026-06-02 23:51:58.372 +03:00 [INF] Executed action Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev) in 20434.1476ms
+2026-06-02 23:51:58.375 +03:00 [INF] Executed endpoint 'Task_corectev.Api.Controllers.ChatController.Ask (Task_corectev)'
+2026-06-02 23:51:58.377 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5254/api/Chat/ask - 200 null application/json; charset=utf-8 20450.1898ms

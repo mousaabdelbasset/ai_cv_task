@@ -12,6 +12,8 @@
     <PackageReference Include="Microsoft.SemanticKernel.Core" Version="1.77.0" />
     <PackageReference Include="PdfPig" Version="0.1.15-alpha-20260530-bb406" />
     <PackageReference Include="Qdrant.Client" Version="1.18.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="8.0.0-nblumhardt-02322" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.0" />
   </ItemGroup>
 

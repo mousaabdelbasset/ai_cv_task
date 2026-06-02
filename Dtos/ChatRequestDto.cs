@@ -7,5 +7,8 @@
 
         // The actual message input from the user
         public string UserMessage { get; set; } = string.Empty;
+
+        // Added CvId to link the chat to a specific CV and avoid retrieving data from others
+        public string CvId { get; set; } = string.Empty;
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\Task_corectev.csproj": {}
+    "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\HR_AI\\ai_cv_task\\Task_corectev.csproj": {}
   },
   "projects": {
-    "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\Task_corectev.csproj": {
+    "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\HR_AI\\ai_cv_task\\Task_corectev.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\Task_corectev.csproj",
+        "projectUniqueName": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\HR_AI\\ai_cv_task\\Task_corectev.csproj",
         "projectName": "Task_corectev",
-        "projectPath": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\Task_corectev.csproj",
+        "projectPath": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\HR_AI\\ai_cv_task\\Task_corectev.csproj",
         "packagesPath": "C:\\Users\\micro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\Task_corectev\\Task_corectev\\obj\\",
+        "outputPath": "C:\\Users\\micro\\Desktop\\current_iti_tasks\\Ai\\HR_AI\\ai_cv_task\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -72,6 +72,14 @@
             "Qdrant.Client": {
               "target": "Package",
               "version": "[1.18.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[8.0.0-nblumhardt-02322, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
